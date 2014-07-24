@@ -1,0 +1,30 @@
+<div class="container">   
+  <div class="row">
+      <div class="col-md-12">
+        <h1>Movies</h1>
+        <div class="panel panel-primary">
+          <form action="/create_movie">
+           <h4>Add a New Movie</h4>
+          <label for="movie_url">Movie URL</label>
+          <input id="movie_url" name="movie_url" type="text" /><br />
+
+          <label for="image_url">Image URL</label>
+          <input id="image_url" name="image_url" type="text" />
+          <input type="submit">
+      </form>
+      </div>
+    </div>
+  </div>
+        <div class="row">
+          <% @movies.each do |movie| %>
+          <div class="col-md-3 col-sm-4 col-xs-6">
+            <a href="/movies/<%= movie.id %>">show</a> | 
+            <a href="/movies/<%= movie.id %>/edit">edit</a> | 
+            <a href="/movies/<%= movie.id %>/destroy">destroy</a>
+            <a href="<%= movie.movie_url %>" class="thumbnail">
+                <img src="<%= movie.image_url %>">
+            </a> 
+          </div>
+        <% end %>
+          </div>
+  </div>

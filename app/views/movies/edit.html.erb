@@ -1,0 +1,17 @@
+<h1>Editing Movie #<%= @movie.id %></h1>
+
+<form action="/movies/<%= @movie.id %>/update">
+  <div>
+    <label for="movie_url">movie_url</label><br />
+    <input id="movie_url" name="movie_url" value="<%= @movie.movie_url  %>" type="text" />
+  </div>
+  <div>
+    <label for="image_url">image_url</label><br />
+    <input id="image_url" name="image_url" value="<%= @movie.image_url  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+
